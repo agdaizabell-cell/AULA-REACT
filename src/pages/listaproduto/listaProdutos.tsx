@@ -1,11 +1,13 @@
-import Footer from '../../../components/footer/footer'
-import Header from '../../../components/header/header'
-import './listaProduto.css'
+
+import './listaProdutos.css'
+import img1 from '../../assets/img/produtos/le_grand_chocolat.png'
+import icones1 from '../../assets/icones/user.svg'
+import icones2 from '../../assets/icones/star.svg'
 
 function listaProduto(){
     return(
         <>
-        <Header/>
+       
         <main>
         <section className="prod_banner" />
   <section className="container prod_container">
@@ -18,7 +20,7 @@ function listaProduto(){
       <article className="prod_card">
         <figure>
           <img
-            src="../img/produtos/le_grand_chocolat.png"
+            src={img1}
             alt="foto do produto"
             />
         </figure>
@@ -31,9 +33,9 @@ function listaProduto(){
         <p className="card_rodape">
           <data value={185.0}>R$ 185,00 / kg</data>
           <span className="card_av">
-            <img src="../icones/user.svg" alt="icone de usuarios" />
+            <img src= {icones1} alt="icone de usuarios" />
             <data value={10}>10</data>
-            <img src="../icones/star.svg" alt="icone de estrela" />
+            <img src={icones2} alt="icone de estrela" />
             <data value="9.5">9,5</data>
           </span>
         </p>
@@ -42,8 +44,8 @@ function listaProduto(){
   </section>
 </main>
 
-<Footer/>
+
 </>
     )
 }
-export default listaProduto
+export default listaProduto;

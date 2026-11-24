@@ -55,7 +55,7 @@
 .box_login input[type="button"] {
     border: none;
     background-color: #000000;
-    color: #FFFFFF;
+    color: #ffffff;
     text-transform: uppercase;
     padding: 16px 55px;
     cursor: pointer;
@@ -74,3 +74,19 @@
     transform: scale(1.05);
     border: none;
 }
+
+.box_login button{
+    margin: 100px auto 0;
+    display: block;
+    font-family: var(--fontHanken);
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    border: none;
+    background-color: #000000;
+    color: #FFFFFF;
+    padding: 16px 55px;
+    cursor: pointer;
+    letter-spacing: 3px;
+}
+

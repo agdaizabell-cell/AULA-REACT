@@ -1,11 +1,40 @@
 import './AdmProdutos.css'
 import iconJacquin from "../../assets/img/icon_jacquin.png"
 import Dialog from '../../components/dialog/Dialog'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import type { ProdutoRequest, Produto } from '../../types/Produto'
+import type{ Categoria } from '../../types/Categorias'
 
+
+const formularioVazio: ProdutoRequest = {
+    nome: '',
+    descricaoCurta: '',
+    descricaoLonga: '',
+    precoPorKg: 0,
+    ativo: true,
+    imagem: '',
+    categoriaIds: [],
+    categorias: []
+}
 function AdmProdutos() {
+    const [Produto, setProduto] = useState<Produto[]>([])
+    const [categorias, setCategorias] = useState <Categoria[]>([])
+    const[formulario, setFormulario]= useState <ProdutoRequest>(formularioVazio)
+    const [arquivo, setarquivo] = useState <File | null>(null)
+    const [editandoId, setEditando] = useState<number | null >(null)
+    const [excluindo, setExcluindo] = useState <Produto | null > (null)
+    const [erro, setErro] = useState ('')
+    const [mensagem, setMensagem]= useState ('')
+    const[salvando, setSalvando] = useState (false)
     const [mostrar, setMostrar]= useState(false)
+
+    useEffect (() => {
+        if(!sessionStorage.getItem('token')) return
+        
+    })
+
     const aoFechar = () => setMostrar (false)
+    
     const aoConfirmar =() => {
         alert("produto excluido")
         setMostrar (false)
@@ -148,7 +177,11 @@ function AdmProdutos() {
                                     O clássico parisiense: café arábica, chocolate amargo e biscuit
                                     joconde.
                                 </td>
+
+                             
+
                                 <td data-cell="opções">
+                                <div className='botao_adm'>
                                     <button type='button' onClick={() => setMostrar (true)}>
 
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
@@ -159,6 +192,8 @@ function AdmProdutos() {
                                             />
                                     </svg>
                                             </button>
+                                            </div>
+                                          
                                     <Dialog
                                     title='excluir texto'
                                     mostrar ={mostrar}

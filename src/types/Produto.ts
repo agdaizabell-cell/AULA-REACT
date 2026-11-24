@@ -10,3 +10,5 @@ export type Produto ={
     categorias:number[]
 
 }
+
+export type ProdutoRequest = Omit <Produto, 'id'> 

@@ -228,3 +228,8 @@ td {
         color: #444444;
     }
 }
+
+.botao_adm button{
+    border: none;
+    background-color: transparent;
+}

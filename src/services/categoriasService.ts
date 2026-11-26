@@ -1,9 +1,10 @@
 import type { Categoria } from "../types/Categorias"
 import { api } from "./api"
 
-const categoriasService = {
+const CategoriasService = {
     async listar (){
         const resposta = await api.get<Categoria[]>('categorias')
+        return resposta.data
     }
 }
-export default categoriasService
+export default CategoriasService
